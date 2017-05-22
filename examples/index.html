@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .fail {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model='test'>
+        <span v-verify:other.blur>
+            <!--<span class='success' data-verify='true'>验证正确</span>-->
+            <span class='fail' data-verify='false'><i></i>{%error%}</span>
+        </span>
+        <br>
+        <label for="">请输入手机号：</label>
+        <br>
+        <input type="text" v-model='phone'>
+        <span v-verify:phone.keyup>
+            <span class='success' data-verify='true'>验证正确</span>
+            <span class='fail' data-verify='false'><i></i>{%error%}</span>
+        </span>
+        <br>
+        <label for="">请输入邮箱：</label>
+        <br>
+        <input type="text" v-model='email'>
+        <span v-verify:email.blur>
+            <span class='success' data-verify='true'>验证正确</span>
+            <span class='fail' data-verify='false'><i></i>{%error%}</span>
+        </span>
+    </div>
+    <script src='/outputs/app.js'></script>
+</body>
+</html>
